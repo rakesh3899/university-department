@@ -14,10 +14,10 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'role_id'   => 1,
             'fname'     => 'MR.',
-            'lname'    => 'Admin',
+            'lname'     => 'Admin',
             'email'     => "admin@example.com",
             'password'  => bcrypt("rootadmin"),
-            'mobile'    => 01300000000
+            'mobile'    => "01300000000"
         ]);
     }
 }
