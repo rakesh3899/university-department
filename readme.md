@@ -8,6 +8,7 @@ This is a university department base website.
 - change directory to university department `cd university-departmet`
 - copy the `.env.example` file to `.env`
 - install all dependensis `composer install`
+- generate a new key `php artisan key:generate --ansi`
 - create a database
 - change the database info in `.env` file
 - create all tables `php artisan migrate --seed`
