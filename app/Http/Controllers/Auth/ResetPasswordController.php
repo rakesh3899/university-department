@@ -25,7 +25,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -34,6 +34,18 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
+        if (Auth::check() && Auth::user()->role->id == 1)
+        {
+            $this->redirectTo = route("backend.admin.dashboard");
+        }
+        elseif (Auth::check() && Auth::user()->role->id == 2)
+        {
+            $this->redirectTo = route("backend.teacher.dashboard");
+        }
+        elseif (Auth::check() && Auth::user()->role->id == 3)
+        {
+            $this->redirectTo = route("backend.student.dashboard");
+        }
         $this->middleware('guest');
     }
 }
