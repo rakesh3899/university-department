@@ -13,6 +13,7 @@ Route::group(['as' => 'backend.', 'prefix' => 'backend', 'namespace' => 'Backend
      * ********************/
     Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['admin']], function (){
         //write here admin routes
+        Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
     });
     /***********************
         route for teacher
