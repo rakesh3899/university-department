@@ -20,12 +20,14 @@ Route::group(['as' => 'backend.', 'prefix' => 'backend', 'namespace' => 'Backend
      * ********************/
     Route::group(['as' => 'teacher.', 'prefix' => 'teacher', 'namespace' => 'Teacher', 'middleware' => ['teacher']], function (){
         //write here teacher routes
+        Route::get('/dashboard', function(){return "Teacher Dashboard";})->name('dashboard');
     });
     /***********************
         route for student
      * ********************/
     Route::group(['as' => 'student.', 'prefix' => 'student', 'namespace' => 'Student', 'middleware' => ['student']], function (){
         //write here student routes
+        Route::get('/dashboard', function(){return "Student Dashboard";})->name('dashboard');
     });
 });
 /***********************
