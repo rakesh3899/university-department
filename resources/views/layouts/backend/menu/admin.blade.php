@@ -3,12 +3,13 @@
         <div class="pcoded-inner-navbar main-menu">
             <div class="pcoded-navigation-label">Navigation</div>
             <ul class="pcoded-item pcoded-left-item">
-                <li class="active">
-                    <a href="#" class="waves-effect waves-dark">
+                <li class="{{ (Route::is('backend.admin.dashboard')) ? 'active' : '' }}">
+                    <a href="{{ route('backend.admin.dashboard') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                         <span class="pcoded-mtext">Dashboard</span>
                     </a>
                 </li>
+
                 <li class="pcoded-hasmenu">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
@@ -61,6 +62,20 @@
                 </li>
 
             </ul>
+
+            <div class="pcoded-navigation-label">Website Maintenance</div>
+            <ul class="pcoded-item pcoded-left-item">
+                <li class="pcoded-hasmenu">
+                    <li class="{{ (Route::is('backend.admin.aboutus')) ? 'active' : '' }}">
+                        <a href="{{ route('backend.admin.aboutus') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-mtext">About Us</span>
+                        </a>
+                    </li>
+                </li>
+
+            </ul>
+
             <div class="pcoded-navigation-label">UI Element</div>
             <ul class="pcoded-item pcoded-left-item">
                 <li class="pcoded-hasmenu">

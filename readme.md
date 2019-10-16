@@ -14,6 +14,10 @@ This is a university department base website.
 - create all tables `php artisan migrate --seed`
 - Login to your dashboard with admin email **'admin@example.com'** and password **'rootadmin'**
 
+## External Packages
+- For manage all image related problem (Intervention image) `intervention/image`
+- Toaster Notification `brian2694/laravel-toastr`
+
 ## Contributing
 
 Please contact with the author via [rakeshmistry3899@gmail.com](mailto:rakeshmistry3899@gmail.com)
