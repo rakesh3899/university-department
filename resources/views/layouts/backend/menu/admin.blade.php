@@ -68,12 +68,19 @@
                 <li class="pcoded-hasmenu">
                     <li class="{{ (Route::is('backend.admin.aboutus')) ? 'active' : '' }}">
                         <a href="{{ route('backend.admin.aboutus') }}" class="waves-effect waves-dark">
-                            <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                            <span class="pcoded-micon"><i class="feather icon-type"></i></span>
                             <span class="pcoded-mtext">About Us</span>
                         </a>
                     </li>
                 </li>
-
+                <li class="pcoded-hasmenu">
+                <li class="{{ (Route::is('backend.admin.headmessage')) ? 'active' : '' }}">
+                    <a href="{{ route('backend.admin.headmessage') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-message-square"></i></span>
+                        <span class="pcoded-mtext">Head Message</span>
+                    </a>
+                </li>
+                </li>
             </ul>
 
             <div class="pcoded-navigation-label">UI Element</div>

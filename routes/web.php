@@ -17,6 +17,9 @@ Route::group(['as' => 'backend.', 'prefix' => 'backend', 'namespace' => 'Backend
         // About us route
         Route::get('/aboutus', 'AboutUsController@index')->name('aboutus');
         Route::post('/aboutus', 'AboutUsController@store')->name('post_aboutus');
+        // Head Message
+        Route::get('/headmessage', 'HeadMessageController@index')->name('headmessage');
+        Route::post('/headmessage', 'HeadMessageController@store')->name('post_headmessage');
     });
     /***********************
         route for teacher
