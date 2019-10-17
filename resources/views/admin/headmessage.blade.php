@@ -22,7 +22,7 @@
                         <li class="breadcrumb-item">
                             <a href="{{ route('backend.admin.dashboard') }}"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Head's Message</a> </li>
+                        <li class="breadcrumb-item"><a href="#">Head's Message</a> </li>
                     </ul>
                 </div>
             </div>
