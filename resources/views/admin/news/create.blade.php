@@ -11,7 +11,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Head's Message</h5>
+                        <h5>Create News</h5>
                         <span></span>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <li class="breadcrumb-item">
                             <a href="{{ route('backend.admin.dashboard') }}"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">Head's Message</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">News Create</a> </li>
                     </ul>
                 </div>
             </div>
@@ -40,32 +40,32 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Head's Message Section Editor</h5>
-                                    <span>Enter Title, Image, Description</span>
+                                    <h5>Add New News Editor</h5>
+                                    <span>Enter News Title, Image, Description</span>
                                 </div>
                                 <div class="card-block">
-                                    <form action="{{ route('backend.admin.post_headmessage') }}" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('backend.admin.news.store') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <div class="row">
                                             <div class="col-md-9">
                                                 <div class="form-group">
-                                                    <label for="title">Enter Message title</label>
-                                                    <input type="text" class="form-control" id="title" name="title" value="{{ $about->title }}">
+                                                    <label for="title">Enter News title</label>
+                                                    <input type="text" class="form-control" id="title" name="title">
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea id="editor" name="description">{!! $about->description !!}</textarea>
+                                                    <textarea id="editor" name="description"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="image">Choose Message section image</label>
+                                                    <label for="image">Choose news image</label>
                                                     <input type="file" name="image" class="form-control">
                                                 </div>
-                                                <div class="from-group">
+                                                {{--<div class="from-group">
                                                     <label for="featured_img">Preview</label>
-                                                    <img src="{{ asset( $about->image ) }}" alt="" class="img-preview">
+                                                    <img src="{{ asset( $about->image ) }}" alt="" class="img-preview" style="min-height: 105px;">
                                                     <hr/>
-                                                </div>
+                                                </div>--}}
                                                 <div class="form-group">
                                                     <div style="" class="">
                                                         <button type="reset" class="btn btn-danger">Reset</button>
@@ -87,8 +87,8 @@
     </div>
 @endsection
 @push('js')
-    <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
-    {{--<script src="{{ asset('public/backend/assets/js/editor.js') }}"></script>--}}
+    {{--<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>--}}
+    <script src="{{ asset('public/backend/assets/js/editor.js') }}"></script>
     <script>
         ClassicEditor
             .create( document.querySelector( '#editor' ) )

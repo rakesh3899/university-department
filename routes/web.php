@@ -20,6 +20,8 @@ Route::group(['as' => 'backend.', 'prefix' => 'backend', 'namespace' => 'Backend
         // Head Message
         Route::get('/headmessage', 'HeadMessageController@index')->name('headmessage');
         Route::post('/headmessage', 'HeadMessageController@store')->name('post_headmessage');
+        // News Routes Here
+        Route::resource('news', 'NewsController');
     });
     /***********************
         route for teacher
