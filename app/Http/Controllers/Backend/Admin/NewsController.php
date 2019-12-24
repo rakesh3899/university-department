@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Admin;
 
 use App\News;
 use Brian2694\Toastr\Facades\Toastr;
+use Carbon\Carbon;
 use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +21,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index');
+        $newses = News::latest()->get();
+        return view('admin.news.index', compact('newses'));
     }
 
     /**
@@ -50,13 +52,13 @@ class NewsController extends Controller
         $image = $request->file('image');
         if ( isset($image) )
         {
-            $image_name = "aboutus".'.'.$image->getClientOriginalExtension();
+            $image_name = "news_".date_format(Carbon::today(), "Y-m-d").uniqid().'.'.$image->getClientOriginalExtension();
             if ( !Storage::disk('public')->exists('news') )
             {
                 Storage::disk('public')->makeDirectory('news');
             }
-            Image::make($image)->resize (1110,111)->save('storage/app/public/news'.$image_name);
-            $image_path = 'storage/app/public/news'.$image_name;
+            Image::make($image)->resize (1110,111)->save('storage/app/public/news/'.$image_name);
+            $image_path = 'storage/app/public/news/'.$image_name;
         }
         else
         {
